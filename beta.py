@@ -10,8 +10,13 @@ def calculate_beta_of_a_stock():
     A stock that swings more than the market over time has a beta greater than 1.0. If a stock moves less than the market, the stock's beta is less than 1.0.
     As a result, beta is often used as a risk-reward measure, meaning it helps investors determine how much risk they are willing to take to achieve the return for taking on that risk.
     
-    Index used to calculate beta is S&P 500. 
-    Data s
+    Index used to calculate beta is S&P 500 (^GSPC). 
+   
+    Returns 3 values
+    Beta Calculation -> float
+    adjusted_close_data -> 'pandas.core.frame.DataFrame'
+    Log_returns -> 'pandas.core.frame.DataFrame'>
+
     '''
 
     #get tickers
@@ -43,6 +48,6 @@ def calculate_beta_of_a_stock():
     
     #beta Calc
     beta_calculation = covariance.loc[index]/index_variance
-    print(beta_calculation)
+    print(type(log_returns))
 
     return beta_calculation,adjusted_close_data, log_returns
